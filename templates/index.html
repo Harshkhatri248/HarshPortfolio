@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Harsh Khatri — AI/ML Engineer, Data Analyst and Business Intelligence portfolio.">
+  <title>Harsh Khatri | AI/ML Engineer & Data Analyst</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="noise"></div>
+<header class="nav-wrap"><nav class="nav container">
+  <a class="brand" href="#home">HarshKhatri<span>.</span></a>
+  <button class="menu" aria-label="Open menu">☰</button>
+  <div class="nav-links"><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div>
+  <a class="nav-cta" href="{{ url_for('resume') }}">Resume ↗</a>
+</nav></header>
+
+<main>
+<section id="home" class="hero container reveal">
+  <div class="hero-copy">
+    <div class="eyebrow"><span></span> Open to opportunities</div>
+    <h1>Building with <em>data.</em><br>Solving with <em>AI.</em></h1>
+    <p class="hero-text">I’m Harsh Khatri, an AI/ML Engineer and Data Analyst focused on turning raw data into useful insights, intelligent models, and practical products.</p>
+    <div class="hero-actions"><a class="btn primary" href="#projects">Explore my work <span>→</span></a><a class="btn ghost" href="#contact">Let’s connect</a></div>
+    <div class="socials"><a href="https://linkedin.com/in/harsh248" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://github.com/Harshkhatri248" target="_blank" rel="noreferrer">GitHub ↗</a><a href="mailto:harshkhatri7988320799@gmail.com">Email↗</a></div>
+  </div>
+  <div class="hero-art" aria-hidden="true"><div class="orb orb1"></div><div class="orb orb2"></div><div class="grid"></div><div class="code-card"><div class="dots">● ● ●</div><code><span>model</span> = <b>train</b>(data)<br><span>insight</span> = <b>analyze</b>(data)<br><span>result</span> = <b>deploy</b>(model)</code><div class="status">● systems thinking</div></div></div>
+</section>
+
+<section class="stats container reveal"><div><strong>1+</strong><span>Year Experience</span></div><div><strong>6+</strong><span>Featured Projects</span></div><div><strong>7.60</strong><span>B.Tech CGPA</span></div><div><strong>94.2%</strong><span>Best Project Accuracy</span></div></section>
+
+<section id="about" class="section container reveal"><div class="section-head"><span>01 / ABOUT</span><h2>A little about me.</h2></div><div class="about-grid"><div><p class="lead">I enjoy the space where <strong>analytics, machine learning and software</strong> meet.</p><p>My work spans data preparation, exploratory analysis, predictive modeling, dashboards, APIs and application development. I like understanding the problem first, choosing a practical approach, and then building something that people can actually use.</p><p>I completed my B.Tech in Artificial Intelligence & Data Science from Chandigarh Group of Colleges, Landran, with a CGPA of 7.60/10.</p></div><div class="about-card"><div class="mini-label">CURRENT TOOLKIT</div><div class="pill-list"><span>Python</span><span>SQL</span><span>Power BI</span><span>Tableau</span><span>Scikit-learn</span><span>Flask</span><span>FastAPI</span><span>Git/GitHub</span></div></div></div></section>
+
+<section id="experience" class="section container reveal"><div class="section-head"><span>02 / EXPERIENCE</span><h2>Where I’ve worked.</h2></div><div class="timeline"><div class="timeline-dot"></div><div class="role"><div class="role-top"><div><h3>AI/ML Engineer</h3><p>Solitaire Infotech · Mohali, Punjab</p></div><span>Jun 2025 — Jun 2026</span></div><ul><li>Worked on machine learning and data-driven projects covering data preparation, model development, testing and evaluation.</li><li>Built preprocessing and feature-engineering workflows with Python, Pandas and NumPy.</li><li>Developed and compared ML models using Scikit-learn and XGBoost, applying cross-validation and tuning where appropriate.</li><li>Created Power BI and Tableau dashboards for KPI tracking, trend analysis and stakeholder reporting.</li><li>Developed Flask and FastAPI REST APIs to integrate ML models with applications.</li><li>Used SQL for data extraction and analysis and collaborated with team members to troubleshoot and deliver project requirements.</li></ul></div></div></section>
+
+<section id="projects" class="section container reveal"><div class="section-head"><span>03 / PROJECTS</span><h2>Work.</h2></div><div class="filters"><button class="active" data-filter="All">All</button><button data-filter="AI / ML">AI / ML</button><button data-filter="Data Analytics">Analytics</button><button data-filter="Power BI">Power BI</button><button data-filter="Computer Vision">Computer Vision</button></div><div class="project-grid">{% for p in projects %}<article class="project" data-category="{{p.category}}"><div class="project-top"><span class="project-number">0{{loop.index}}</span><a href="{{p.github}}" target="_blank" rel="noreferrer" aria-label="Open GitHub">↗</a></div><div><div class="project-cat">{{p.category}}</div><h3>{{p.title}}</h3><p>{{p.description}}</p></div><div class="project-bottom"><div class="tech">{% for t in p.tech %}<span>{{t}}</span>{% endfor %}</div><strong>{{p.metric}}</strong></div></article>{% endfor %}</div></section>
+
+<section id="skills" class="section container reveal"><div class="section-head"><span>04 / SKILLS</span><h2>Tools I work with.</h2></div><div class="skills-grid">{% for name,level in skills %}<div class="skill"><div><span>{{name}}</span><b>{{level}}%</b></div><div class="bar"><i style="width:level"></i></div></div>{% endfor %}</div><div class="skill-cloud"><span>TensorFlow</span><span>PyTorch</span><span>Docker</span><span>MySQL</span><span>PostgreSQL</span><span>MongoDB</span><span>AWS</span><span>Azure</span><span>Plotly</span><span>Power Query</span><span>Jupyter</span><span>OpenCV</span></div></section>
+
+<section id="education" class="section container reveal"><div class="section-head"><span>05 / EDUCATION</span><h2>Academic foundation.</h2></div><div class="edu-card"><div><h3>Bachelor of Technology — Artificial Intelligence & Data Science</h3><p>Chandigarh Group of Colleges, Landran · Mohali, Punjab</p></div><div class="edu-meta"><strong>7.60 / 10</strong><span>2022 — 2026</span></div></div></section>
+
+<section id="contact" class="section contact-section container reveal"><div class="contact-box"><div><div class="section-head"><span>06 / CONTACT</span><h2>Have a project in mind?</h2></div><p>Whether you’re hiring, building a data product, or simply want to talk AI and analytics, I’d be happy to connect.</p><div class="contact-links"><a href="mailto:harshkhatri7988320799@gmail.com">harshkhatri7988320799@gmail.com ↗</a><a href="https://linkedin.com/in/harsh248" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://github.com/Harshkhatri248" target="_blank" rel="noreferrer">GitHub ↗</a></div></div><form id="contactForm"><input name="name" placeholder="Your name" required><input name="email" type="email" placeholder="Your email" required><textarea name="message" placeholder="Tell me a little about your project or opportunity..." required></textarea><button class="btn primary" type="submit">Send message <span>→</span></button><small id="formStatus"></small></form></div></section>
+</main>
+<footer><div class="container footer"><span>© 2026 Harsh Khatri</span><span>Built with Python · Flask · JavaScript</span><a href="#home">Back to top ↑</a></div></footer>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body></html>
